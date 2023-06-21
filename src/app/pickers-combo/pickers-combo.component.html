@@ -1,0 +1,110 @@
+<div class="row-layout group">
+  <div class="column-layout group_1">
+    <igx-select type="border" placeholder="Select a value" value="2" class="user-input">
+      <igx-prefix>
+        <igx-icon class="icon">
+          person
+        </igx-icon>
+      </igx-prefix>
+      <igx-select-item [value]="item.employeeID" *ngFor="let item of northwindEmployees">
+        {{ item.lastName }}
+      </igx-select-item>
+      <label igxLabel>Employees</label>
+    </igx-select>
+    <igx-select type="box" placeholder="pick a value" class="user-input">
+      <igx-select-item value="Option">
+        Option
+      </igx-select-item>
+      <label igxLabel>Label/Placeholder</label>
+    </igx-select>
+    <igx-select type="border" placeholder="pick a value" value="3" class="user-input">
+      <igx-select-item value="1">
+        Android
+      </igx-select-item>
+      <igx-select-item value="2">
+        iOS
+      </igx-select-item>
+      <igx-select-item value="3">
+        Web
+      </igx-select-item>
+      <label igxLabel>Label/Placeholder</label>
+    </igx-select>
+    <igx-select type="border" placeholder="Select a value" class="user-input">
+      <igx-suffix>
+        <igx-icon class="icon">
+          date_range
+        </igx-icon>
+      </igx-suffix>
+      <igx-select-item value="Option">
+        Option
+      </igx-select-item>
+      <igx-select-item value="Option">
+        Option
+      </igx-select-item>
+      <igx-select-item value="Option">
+        Option
+      </igx-select-item>
+      <label igxLabel>Options</label>
+      <igx-hint>Show help text here</igx-hint>
+    </igx-select>
+    <igx-select type="box" [disabled]="true" class="user-input">
+      <label igxLabel>I have a label</label>
+      <igx-hint>disabled</igx-hint>
+    </igx-select>
+  </div>
+  <div class="column-layout group_1">
+    <igx-combo type="border" [data]="northwindCustomers" placeholder="no label + placeholder" valueKey="customerID" displayKey="customerID" [filterable]="true" [autoFocusSearch]="true" class="user-input">
+      <igx-prefix>
+        <igx-icon class="icon">
+          person
+        </igx-icon>
+      </igx-prefix>
+      <label igxLabel>Categories</label>
+    </igx-combo>
+    <igx-combo type="border" [data]="northwindCustomers" placeholder="disabled combo" [disabled]="true" valueKey="customerID" displayKey="customerID" [filterable]="true" class="user-input">
+      <igx-prefix>
+        <igx-icon class="icon">
+          person
+        </igx-icon>
+      </igx-prefix>
+      <igx-suffix>
+        <igx-icon class="icon_1">
+          warning
+        </igx-icon>
+      </igx-suffix>
+      <label igxLabel>Description</label>
+    </igx-combo>
+    <igx-combo [data]="northwindEmployees" placeholder="Box-style combo" valueKey="employeeID" displayKey="firstName" [filterable]="true" [autoFocusSearch]="true" class="user-input">
+      <igx-prefix>
+        <igx-icon class="icon">
+          person
+        </igx-icon>
+      </igx-prefix>
+      <label igxLabel>Names</label>
+    </igx-combo>
+    <igx-combo [data]="northwindEmployees" placeholder="Box-style combo + disabled" [disabled]="true" valueKey="employeeID" displayKey="firstName" [filterable]="true" [autoFocusSearch]="true" class="user-input"></igx-combo>
+    <button igxButton="raised" igxRipple [igxToggleAction]="dropdown" class="button">
+      <span>Dropdown</span>
+      <igx-icon>
+        keyboard_arrow_down
+      </igx-icon>
+    </button>
+    <igx-date-picker type="border" mode="dialog" [(ngModel)]="date" class="date-picker">
+      <label igxLabel>Date</label>
+    </igx-date-picker>
+    <igx-drop-down #dropdown class="dropdown">
+      <igx-drop-down-item>
+        Option
+      </igx-drop-down-item>
+      <igx-drop-down-item>
+        Option
+      </igx-drop-down-item>
+      <igx-drop-down-item>
+        Option
+      </igx-drop-down-item>
+      <igx-drop-down-item>
+        Option
+      </igx-drop-down-item>
+    </igx-drop-down>
+  </div>
+</div>
